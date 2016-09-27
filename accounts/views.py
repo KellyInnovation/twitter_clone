@@ -12,7 +12,7 @@ def register(request):
 
 			new_user.set_password(form.cleaned_data['password'])
 			new_user.save()
-			messages.success(request, "Please confirm and login.")
+			messages.success(request, "Please login below.")
 
 			return redirect('accounts:login')
 	else:

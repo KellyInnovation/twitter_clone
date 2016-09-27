@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    <form action="" method="POST">
+    	{% csrf_token %}
+    	{% for field in form %}
+    		{% include "core/_form_input.html" %}
+    	{% endfor %}
+
+    	<button type="submit" class="btn btn-primary btn-block btn-lg">
+    		Create new Tweet
+    	</button>
+    </form>
+{% endblock content %}

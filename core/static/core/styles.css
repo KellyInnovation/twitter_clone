@@ -2,6 +2,19 @@ body {
 	margin-top: 70px;
 }
 
-.navbar-fixed-top {
-	color: #0084B4;
+.icon-bar {
+	background-color: black;
 }
+
+#navbar-header-collapse {
+	background-color: white;
+}
+
+.navbar-fixed-top a {
+	color: #66757F;
+}
+
+.navbar-header a:hover {
+	color: #2771AA;
+}
+

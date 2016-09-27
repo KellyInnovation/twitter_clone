@@ -5,7 +5,7 @@ class BootstrapFormMixin(object):
 		super().__init__(*args, **kwargs)
 
 		for field in self.fields.values():
-			if (isinstance(field.widget, widget.TextInput) or isinstance(field.widget, widgets.Textarea)):
+			if (isinstance(field.widget, widgets.TextInput) or isinstance(field.widget, widgets.Textarea)):
 
 				field.widget.attrs.update({
 					"class": "form-control",

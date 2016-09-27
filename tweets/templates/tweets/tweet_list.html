@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+	
+	{% if books %}
+	    	
+		<div class="row twitter-tweet">
+			{% for tweet in tweets %}
+				{{tweets.tweet_text}}
+			{% endfor %}
+		</div>
+	{% else %}
+	    <p>There are no tweets.</p>
+
+	{% endif %}
+
+{% endblock content %}

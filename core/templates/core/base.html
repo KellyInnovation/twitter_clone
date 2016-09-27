@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-header-collapse" aria-expanded="false">
@@ -51,8 +51,15 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-header-collapse">
-                    
-                    
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                            <li><a href="{% url 'accounts:register' %}">Sign Up</a></li>
+                            <li><p class="navbar-text navbar-right">Signed in as {{request.user.username}}</p></li>
+                        {% endif %}
+                    </ul>                             
                 </div>
             </div>
         </nav>
