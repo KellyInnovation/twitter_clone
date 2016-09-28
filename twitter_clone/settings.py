@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'core',
     'tweets',
     'accounts',
+    'user_profiles',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^tweets/', include('tweets.urls', namespace='tweets')),
+    url(r'^user_profiles/', include('user_profiles.urls', namespace='user_profiles')),    
     url(r'^', include('core.urls', namespace='core')),
 ]

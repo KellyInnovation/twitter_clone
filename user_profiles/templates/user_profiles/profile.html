@@ -3,14 +3,14 @@
 {% block content %}
 	<div class="row">
 		<div class="col-lg-3 col-xs-4 tweet-lg-left">
-			Trends
+			<h2>{{user_data}}</h2>
 		</div>
 		<div class="col-lg-6 col-xs-8 tweet-lg-center">
 			
 				{% if tweets %}
 				    	
 						{% for tweet in tweets %}
-							<div class="panel panel-default tweet-box">
+							<div class="panel panel-default">
 								{{tweet.tweet_text}}
 							</div>
 						{% endfor %}
