@@ -19,7 +19,7 @@ body {
 }
 
 .navbar-right {
-	
+	float: right;
 }
 
 .tweet-box {

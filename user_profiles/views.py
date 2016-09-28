@@ -18,4 +18,5 @@ def following(request):
 def can_edit(request):
 	pass
 
-
+def user_info(request):
+	pass
