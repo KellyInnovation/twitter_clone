@@ -18,9 +18,9 @@ def tweet_new(request):
 	if request.method == "POST":
 		form = TweetForm(request.POST)
 		if form.is_valid():
-			tweet = form.save()
+			tweet_text = form.save()
 			messages.success(request, "Tweet created!")
-			return redirect("core:index")
+			return redirect("tweets:tweet_list")
 
 	else:
 		form = TweetForm()

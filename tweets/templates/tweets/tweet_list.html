@@ -1,17 +1,32 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-	
-	{% if books %}
-	    	
-		<div class="row twitter-tweet">
-			{% for tweet in tweets %}
-				{{tweets.tweet_text}}
-			{% endfor %}
+	<div class="row">
+		<div class="col-lg-3 col-xs-4 tweet-lg-left">
+			Trends
 		</div>
-	{% else %}
-	    <p>There are no tweets.</p>
+		<div class="col-lg-6 col-xs-8 tweet-lg-center">
+			
+				{% if tweets %}
+				    	
+						{% for tweet in tweets %}
+							<div class="panel panel-default">
+								{{tweet.tweet_text}}
+							</div>
+						{% endfor %}
+				
+				{% else %}
+				    <p>There are no tweets.</p>
 
-	{% endif %}
+				{% endif %}
+			
 
+			<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
+				Compose new Tweet
+			</a>
+		</div>
+		<div class="col-lg-3 col-xs-4 tweet-lg-right">
+			Who to follow
+		</div>
+	</div>
 {% endblock content %}
