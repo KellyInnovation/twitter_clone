@@ -6,9 +6,9 @@ body {
 	background-color: black;
 }
 
-#navbar-header-collapse {
+/*#navbar-header-collapse {
 	background-color: white;
-}
+}*/
 
 .navbar-fixed-top a {
 	color: #66757F;
@@ -18,7 +18,17 @@ body {
 	color: #2771AA;
 }
 
+.navbar-right {
+	
+}
+
 .tweet-box {
 	margin: 0;
+}
+
+.icon-logo {
+	border: 1px solid black;
+	height: 50px;
+	padding: 0;
 }
 

@@ -11,6 +11,8 @@ class UserProfile(models.Model):
 			("can_edit", "Can edit or delete a tweet"),
 		)
 
+	
+
 	def __str__(self):
 		return "{} {}".format(self.user_data.first_name, self.user_data.last_name)
 		return self.user_data.username
