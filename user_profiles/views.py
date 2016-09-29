@@ -3,11 +3,13 @@ from django.shortcuts import render, get_object_or_404
 from .models import UserProfile
 
 def profile_list(request):
-	user_profile = UserProfile.objects.all()
-	
+	username = None
+
+	if request.user.is_authenticated():
+		username = request.user.username
 
 	context = {
-		"user_profile": user_profile,
+		"username": username,
 	}
 
 	return render(request, "user_profiles/profile.html", context)

@@ -10,9 +10,13 @@
 				{% if tweets %}
 				    	
 						{% for tweet in tweets %}
-							<div class="panel panel-default tweet-box">
-								{{tweet.tweet_text}}
-							</div>
+							
+
+								<div class="panel panel-default tweet-box">
+									{{tweet.tweet_text}}
+									{{user.username}}
+								</div>
+							
 						{% endfor %}
 				
 				{% else %}

@@ -3,12 +3,15 @@ from django.contrib import messages
 
 from .models import Tweet
 from .forms import TweetForm
+from django.contrib.auth.models import User
 
 def tweet_list(request):
 	tweets = Tweet.objects.all()
+	users = User()
 
 	context = {
 		"tweets": tweets,
+		"users": users
 		
 	}
 
