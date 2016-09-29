@@ -14,6 +14,7 @@ def register(request):
 			new_user.save()
 			messages.success(request, "Please login below.")
 
+			
 			return redirect('accounts:login')
 	else:
 		form = UserRegistrationForm()

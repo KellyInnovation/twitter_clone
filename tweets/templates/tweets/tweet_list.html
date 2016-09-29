@@ -10,11 +10,16 @@
 					{% load static %}
 					<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
 				</div>
-				<div class="col-xs-11">
-					{{tweet.user}}
-					{{tweet.published_date}}
-					{{tweet.tweet_text}}
-						
+				<div class="col-xs-1"></div>
+				<div class="col-xs-10">
+					<div class="row">
+						<strong>{{user.first_name}} {{user.last_name}}</strong>
+						@{{user.username}}-
+						{{tweet.published_date}}
+					</div>
+					<div class="row">	
+						{{tweet.tweet_text}}
+					</div>						
 				</div>	
 			</div>	
 		</div>

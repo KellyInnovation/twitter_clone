@@ -8,3 +8,6 @@ class TweetForm(BootstrapFormMixin, forms.ModelForm):
 	class Meta:
 		model = Tweet
 		fields = ('tweet_text',)
+
+	def add_username(self):
+		pass

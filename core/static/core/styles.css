@@ -39,3 +39,7 @@ body {
 .user-photo {
 	width: 30px;
 }
+
+.tweet-lg-right {
+	float: top;
+}
