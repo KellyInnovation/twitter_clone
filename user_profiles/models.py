@@ -13,11 +13,6 @@ class UserProfile(models.Model):
 			("can_edit", "Can edit or delete a tweet"),
 		)
 
-	def __init__(self):
-		self.username1 = None
-
-	def user_info(self):
-		self.username1 = user_data.username	
 
 	def get_absolute_url(self):
 		return reverse('user_profiles:profile', args=[self.pk])

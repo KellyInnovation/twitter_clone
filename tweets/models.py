@@ -2,13 +2,13 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 
-
+from django.contrib.auth.models import User
 from user_profiles.models import UserProfile
 
 class Tweet(models.Model):	
 	tweet_text = models.CharField(max_length=140, default=" ")
-	published_date = models.DateTimeField(null=True, blank=True)
-	user = models.ForeignKey('user_profiles.UserProfile', null=True, blank=True)
+	published_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+	user = models.ForeignKey(User, null=True, blank=True)
 
 	def __str__(self):
 		return self.tweet_text

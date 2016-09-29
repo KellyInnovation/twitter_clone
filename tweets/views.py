@@ -41,7 +41,11 @@ def tweet_new(request):
 		form = TweetForm(request.POST)
 		if form.is_valid():
 			tweet_text = form.save(commit=False)
+			tweet_text.user = request.user_id
+
+			tweet_text.save()
 			messages.success(request, "Tweet created!")
+
 			return redirect("tweets:tweet_display")
 
 	else:
