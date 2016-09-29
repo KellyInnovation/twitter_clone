@@ -21,43 +21,46 @@
 <body>
     <header>
         <nav class="navbar navbar-fixed-top">
-            <div class="container">               
-                
-                <img class="navbar-brand icon-logo" src="https://www.dropbox.com/s/hx8tbx991rkz3rr/awesome_tweet.png?dl=1"/>
+            <div class="container">             
+                <ul class="nav navbar-nav">
+                    <li><img class="navbar-brand icon-logo" src="https://www.dropbox.com/s/hx8tbx991rkz3rr/awesome_tweet.png?dl=1"/></li>
 
-                <a href="{% url 'core:index' %}" class="navbar-brand">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                </a>
+                    <li><a href="{% url 'core:index' %}" class="navbar-brand">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </a></li>
 
-                <a href="{% url 'core:index' %}" class="navbar-brand">
-                    <i class="fa fa-bolt" aria-hidden="true"></i>
-                </a>
+                    <li><a href="{% url 'core:index' %}" class="navbar-brand">
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                    </a></li>
 
-                <a href="{% url 'tweets:tweet_list' %}" class="navbar-brand">
-                    <i class="fa fa-bell" aria-hidden="true"></i>
-                </a>
-                
-                <a href="{% url 'core:index' %}" class="navbar-brand">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                </a>
-               
-            </div>
-            <div class="container navbar-fixed-top">
-                
-                {% if request.user.is_authenticated %}
-                    <a class="navbar-brand navbar-right" href="{% url 'accounts:logout' %}">Logout
+                    <li><a href="{% url 'tweets:tweet_display' %}" class="navbar-brand">
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </a></li>
+                    
+                    <li><a href="{% url 'core:index' %}" class="navbar-brand">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a></li>
+
+                <li class="navbar-right">
+                    {% if request.user.is_authenticated %}
+                        <a class="navbar-brand navbar-right" href="{% url 'accounts:logout' %}">Logout
+                        </a>
+                    {% else %}
+                        <a class="navbar-brand navbar-right" href="{% url 'accounts:login' %}">Login</a>
+                        <a class="navbar-brand navbar-right" href="{% url 'accounts:register' %}">Sign Up</a>
+                        <p class="navbar-text navbar-right">
+                            Signed in as {{request.user.username}}
+                        </p>
+                    {% endif %}
+
+                    <a class="navbar-brand navbar-right navbar-fixed-top" href="{% url 'user_profiles:profile_list' %}"> 
+                        {% load static %}
+                        <img src="{% static 'core/awesome_profile.png' %}" class="navbar-brand user-photo-nav">
                     </a>
-                {% else %}
-                    <a class="navbar-brand navbar-right" href="{% url 'accounts:login' %}">Login</a>
-                    <a class="navbar-brand navbar-right" href="{% url 'accounts:register' %}">Sign Up</a>
-                    <p class="navbar-text navbar-right">
-                        Signed in as {{request.user.username}}
-                    </p>
-                {% endif %}
-
-                <a class="navbar-brand navbar-right" href="{% url 'user_profiles:profile_list' %}"> 
-                    <img src="../core/awesome_profile.png">
-                </a>
+                </li>
+                </ul>
+                
+                
             </div>            
         </nav>
     </header>

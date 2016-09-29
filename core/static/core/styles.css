@@ -32,3 +32,10 @@ body {
 	padding: 0;
 }
 
+.user-photo-nav {
+	margin-top: -15px;
+}
+
+.user-photo {
+	width: 30px;
+}

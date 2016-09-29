@@ -1,36 +1,32 @@
-{% extends "core/base.html" %}
-
-{% block content %}
-	<div class="row">
-		<div class="col-lg-3 col-xs-4 tweet-lg-left">
-			Trends
-		</div>
-		<div class="col-lg-6 col-xs-8 tweet-lg-center">
 			
-				{% if tweets %}
-				    	
-						{% for tweet in tweets %}
-							
+{% if tweets %}
+    	
+	{% for tweet in tweets %}
+		
 
-								<div class="panel panel-default tweet-box">
-									{{tweet.tweet_text}}
-									{{user.username}}
-								</div>
-							
-						{% endfor %}
-				
-				{% else %}
-				    <p>There are no tweets.</p>
-
-				{% endif %}
-			
-
-			<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
-				Compose new Tweet
-			</a>
+		<div class="panel panel-default tweet-box">
+			<div class="row">
+				<div class="col-xs-1">
+					{% load static %}
+					<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
+				</div>
+				<div class="col-xs-11">
+					{{tweet.user}}
+					{{tweet.published_date}}
+					{{tweet.tweet_text}}
+						
+				</div>	
+			</div>	
 		</div>
-		<div class="col-lg-3 col-xs-4 tweet-lg-right">
-			Who to follow
-		</div>
-	</div>
-{% endblock content %}
+		
+	{% endfor %}
+
+{% else %}
+    <p>There are no tweets.</p>
+
+{% endif %}
+
+
+<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
+	Compose new Tweet
+</a>

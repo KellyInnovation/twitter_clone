@@ -3,20 +3,11 @@
 {% block content %}
 	<div class="row">
 		<div class="col-lg-3 col-xs-4 tweet-lg-left">
-			<h2>
-				{{full_name}}
-			</h2>
-			<p>
-				{{username}}
-			</p>
-
+			Trends
 		</div>
 		<div class="col-lg-6 col-xs-8 tweet-lg-center">
-			{% include 'tweets/tweet_list.html' %}	
-
-			{% for user in users %}
-				{{user.username}}
-			{% endfor %}
+			
+			{% include 'tweets/tweet_list.html' %}
 		</div>
 		<div class="col-lg-3 col-xs-4 tweet-lg-right">
 			Who to follow
