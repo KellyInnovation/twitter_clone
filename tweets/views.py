@@ -10,13 +10,13 @@ def tweet_display(request):
 	tweets = Tweet.objects.all()
 	users = User.objects.all()
 	profiles = UserProfile()
-
+	form = TweetForm()
 
 	context = {
 		"tweets": tweets,
 		"users": users,
 		"profiles":profiles,
-
+		"form":form,
 	}
 
 	return render(request, "tweets/tweet_display.html", context)

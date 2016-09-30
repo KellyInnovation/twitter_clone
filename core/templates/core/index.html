@@ -11,7 +11,16 @@
 {% endblock content1 %}
 
 {% block content2 %}
+	<form action="{% url 'tweets:tweet_new' %} " method="POST">
+    	{% csrf_token %}
+    	{% for field in form %}
+    		{% include "core/_form_input.html" %}
+    	{% endfor %}
 
+    	<button type="submit" class="btn tweet-button">
+    		<img class="tweet-icon" src="http://buyfollowersguide.com/wp-content/uploads/2014/10/twitter-tweet-icon.png">Tweet
+    	</button>
+    </form>
 	{% if tweets %}    	
 		{% for tweet in tweets %}
 			{% include 'tweets/tweet_list.html' %}

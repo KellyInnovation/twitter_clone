@@ -8,11 +8,11 @@
 {% endblock content1 %}
 
 {% block content2 %}
-    
+    <h2><center>User Tweets</center></h2>
     {% if tweets %}			    	
 		{% for tweet in tweets %}
 			{% if tweet.user.pk == other_user.pk %}
-				{% include 'tweets/tweet_list.html' %}			
+				{% include 'tweets/tweet_list.html' %}
 			{% endif %}
 		{% endfor %}
 	{% else %}
