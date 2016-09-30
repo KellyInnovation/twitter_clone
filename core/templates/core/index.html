@@ -28,23 +28,6 @@
 
 {% block content3 %}
 
-	<h3>Who to Follow</h3>
-		{% for user in users %}
-			<div class="panel panel-default to-follow">
-				<div class="row">
-					<div class="col-xs-3">
-						{% load static %}
-						<img src="{% static 'core/awesome_profile.png' %}" class="follow-user-photo">
-					</div>
-
-					<div class="col-xs-9 tweet-rows">
-						<div class="row">
-							<strong>{{user.first_name.title}} {{user.last_name.title}}</strong>
-							@{{user.username}}
-						</div>					
-					</div>	
-				</div>	
-			</div>
-		{% endfor %}
+	{% include 'user_profiles/who_to_follow.html' %}
 				
 {% endblock content3 %}

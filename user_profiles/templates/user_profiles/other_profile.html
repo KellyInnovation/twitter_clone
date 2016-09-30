@@ -1,6 +1,14 @@
 {% extends "core/base.html" %}
 
-{% block content %}
+{% block content1 %}
+	<h1>	
+		{{other_user.first_name.title}} {{other_user.last_name.title}}
+	</h1>
+	@{{other_user.username}}
+{% endblock content1 %}
+
+{% block content2 %}
+    
     {% if tweets %}			    	
 		{% for tweet in tweets %}
 			{% if tweet.user.pk == other_user.pk %}
@@ -8,7 +16,11 @@
 			{% endif %}
 		{% endfor %}
 	{% else %}
-	    <p>There are no tweets.</p>
+	    <p>This user has no tweets</p>
 	{% endif %}
 
-{% endblock content %}
+{% endblock content2 %}
+
+{% block content3 %}
+	{% include 'user_profiles/who_to_follow.html' %}
+{% endblock content3 %}
