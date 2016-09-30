@@ -1,37 +1,22 @@
-			
-{% if tweets %}
-    	
-	{% for tweet in tweets %}
-		
 
-		<div class="panel panel-default tweet-box">
-			<div class="row">
-				<div class="col-xs-1">
-					{% load static %}
-					<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
-				</div>
-				<div class="col-xs-1"></div>
-				<div class="col-xs-10">
-					<div class="row">
-						<strong>{{tweet.user.first_name}} {{tweet.user.last_name}}</strong>
-						@{{tweet.user.username}}-
-						{{tweet.published_date}}
-					</div>
-					<div class="row">	
-						{{tweet.tweet_text}}
-					</div>						
-				</div>	
-			</div>	
+<div class="panel panel-default tweet-box">
+	<div class="row">
+		<div class="col-xs-1">
+			{% load static %}
+			<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
 		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="row">
+				<strong>{{tweet.user.first_name}} {{tweet.user.last_name}}</strong>
+				@{{tweet.user.username}}-
+				{{tweet.published_date}}
+			</div>
+			<div class="row">	
+				{{tweet.tweet_text}}
+			</div>						
+		</div>	
+	</div>	
+</div>
 		
-	{% endfor %}
 
-{% else %}
-    <p>There are no tweets.</p>
-
-{% endif %}
-
-
-<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
-	Compose new Tweet
-</a>

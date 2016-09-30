@@ -1,62 +1,36 @@
 {% extends "core/base.html" %}
 
-{% block content %}
-	<div class="row">
-		<div class="col-lg-3 col-xs-4 tweet-lg-left">
-			<h2>
-				{{full_name}}
-			</h2>
-			<p>
-				{{username}}
-			</p>
-		</div>
-		<div class="col-lg-6 col-xs-8 tweet-lg-center">
+{% block content1 %}	
+	<h2>
+		{{full_name}}
+	</h2>
+	<p>
+		{{username}}
+	</p>
+{% endblock content1 %}    
+{% block content2 %}
 						
-			{% if tweets %}			    	
-				{% for tweet in tweets %}
-					{% if tweet.user.username == username %}
-			
-						<div class="panel panel-default tweet-box">
-							<div class="row">
-								<div class="col-xs-1">
-									{% load static %}
-									<img src="{% static 'core/awesome_profile.png' %}" class="user-photo">
-								</div>
-								<div class="col-xs-1"></div>
-								<div class="col-xs-10">
-									<div class="row">
-										<strong>{{tweet.user.first_name}} {{tweet.user.last_name}}</strong>
-										@{{tweet.user.username}}-
-										{{tweet.published_date}}
-									</div>
-									<div class="row">	
-										{{tweet.tweet_text}}
-									</div>						
-								</div>	
-							</div>	
-						</div>
-					{% endif %}
-				{% endfor %}
-
-			{% else %}
-			    <p>There are no tweets.</p>
-
+	{% if tweets %}			    	
+		{% for tweet in tweets %}
+			{% if tweet.user.username == username %}
+				{% include 'tweets/tweet_list.html' %}			
 			{% endif %}
+		{% endfor %}
+	{% else %}
+	    <p>There are no tweets.</p>
+	{% endif %}
 
+	<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
+		Compose new Tweet
+	</a>
+{% endblock content2 %}	
+{% block content3 %}
 
-			<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
-				Compose new Tweet
-			</a>
-
-			
-		</div>
-		<div class="col-lg-3 col-xs-4 tweet-lg-right">
-			<h3>Who to Follow</h3>
-				{% for user in users %}
-					<div class="col-offset-xs-2">
-						{{user.username}}
-					</div>
-				{% endfor %}
-		</div>
-	</div>
-{% endblock content %}
+	<h3>Who to Follow</h3>
+		{% for user in users %}
+			<div class="col-offset-xs-2">
+				{{user.username}}
+			</div>
+		{% endfor %}
+				
+{% endblock content3 %}

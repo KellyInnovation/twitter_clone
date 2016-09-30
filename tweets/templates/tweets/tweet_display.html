@@ -1,26 +1,38 @@
 {% extends "core/base.html" %}
 
-{% block content %}
-	<div class="row">
-		<div class="col-lg-3 col-xs-4 tweet-lg-left">
-			<h2>
-				{{full_name}}
-			</h2>
-			<p>
-				{{username}}
-			</p>
-		</div>
-		<div class="col-lg-6 col-xs-8 tweet-lg-center">
+{% block content1 %}	
+	<h2>
+		{{full_name}}
+	</h2>
+	<p>
+		{{username}}
+	</p>
+    
+{% endblock content1 %}
+
+{% block content2 %}
+
+	{% if tweets %}    	
+		{% for tweet in tweets %}
 			{% include 'tweets/tweet_list.html' %}
-			
-		</div>
-		<div class="col-lg-3 col-xs-4 tweet-lg-right">
-			<h3>Who to Follow</h3>
-				{% for user in users %}
-					<div class="col-offset-xs-2">
-						{{user.username}}
-					</div>
-				{% endfor %}
-		</div>
-	</div>
-{% endblock content %}
+		{% endfor %}
+	{% else %}
+	    <p>There are no tweets.</p>
+	{% endif %}
+
+	<a class="btn btn-primary btn-block btn-lg" href="{% url 'tweets:tweet_new' %}">
+		Compose new Tweet
+	</a>
+    
+{% endblock content2 %}
+
+{% block content3 %}
+
+	<h3>Who to Follow</h3>
+		{% for user in users %}
+			<div class="col-offset-xs-2">
+				{{user.username}}
+			</div>
+		{% endfor %}
+				
+{% endblock content3 %}
