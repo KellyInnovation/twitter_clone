@@ -8,9 +8,10 @@
 		<div class="col-xs-1"></div>
 		<div class="col-xs-10 tweet-rows">
 			<div class="row">
-				<strong>{{full_name}}</strong>
+				<strong>{{tweet.user.first_name.title}} {{tweet.user.last_name.title}}</strong>
 				@{{tweet.user.username}}-
 				{{tweet.published_date}}
+
 			</div>
 			<div class="row">	
 				{{tweet.tweet_text}}

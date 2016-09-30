@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 from tweets.models import Tweet
 
-
+@login_required
 def index(request):
 	users = User.objects.all()
 	tweets = Tweet.objects.all()
@@ -19,3 +20,4 @@ def index(request):
 	}
 
 	return render(request, "core/index.html", context)
+

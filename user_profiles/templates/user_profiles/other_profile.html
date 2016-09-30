@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    {% if tweets %}			    	
+		{% for tweet in tweets %}
+			{% if tweet.user.pk == other_user.pk %}
+				{% include 'tweets/tweet_list.html' %}			
+			{% endif %}
+		{% endfor %}
+	{% else %}
+	    <p>There are no tweets.</p>
+	{% endif %}
+
+{% endblock content %}

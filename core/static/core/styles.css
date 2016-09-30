@@ -7,6 +7,11 @@ body {
 	background-color: black;
 }
 
+.icon-logo {
+	border: 1px solid black;
+	height: 40px;
+	padding: 0;
+}
 
 .navbar-fixed-top a {
 	color: #66757F;
@@ -20,6 +25,10 @@ body {
 	float: right;
 }
 
+.user-photo-nav {
+	margin-top: -15px;
+}
+
 .tweet-box {
 	margin: 5px;
 	height: 85px;
@@ -30,22 +39,25 @@ body {
 	margin: 5px 0px;
 }
 
-.icon-logo {
-	border: 1px solid black;
-	height: 40px;
-	padding: 0;
-}
-
-.user-photo-nav {
-	margin-top: -15px;
-}
-
 .user-photo {
 	width: 48px;
 	border-radius: 5px;
 	margin-top: 12px;
+	background-color: #1da1f2;
 }
 
 .tweet-lg-right {
 	float: top;
+}
+
+.page-footer {
+	position: fixed;
+	bottom: 10px;
+}
+
+.follow-user-photo {
+	width: 30px;
+	border-radius: 5px;
+	margin-top: 12px;
+	background-color: #1da1f2;
 }
