@@ -1,5 +1,5 @@
 body {
-	margin-top: 70px;
+	margin-top: 80px;
 	font-family: Helvetica;
 }
 
@@ -47,13 +47,17 @@ body {
 	background-color: #1da1f2;
 }
 
-.tweet-lg-right {
-	float: top;
+.tweet-icon {
+	width: 40px;
 }
 
 .page-footer {
 	position: fixed;
 	bottom: 10px;
+}
+
+.to-follow {
+	margin: 5px 0;
 }
 
 .follow-user-photo {

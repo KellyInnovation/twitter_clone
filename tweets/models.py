@@ -19,7 +19,4 @@ class Tweet(models.Model):
 	def get_absolute_url(self):
 		return reverse('tweets:tweet_display', args=[self.pk])
 
-	def user_info(self):
-		pass
-
 
