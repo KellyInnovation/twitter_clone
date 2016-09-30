@@ -10,13 +10,14 @@ def tweet_display(request):
 	tweets = Tweet.objects.all()
 	users = User.objects.all()
 	profiles = UserProfile()
+	full_name = "{} {}".format(request.user.first_name.title(), request.user.last_name.title())
 
 
 	context = {
 		"tweets": tweets,
 		"users": users,
 		"profiles":profiles,
-	
+		"full_name": full_name,
 	}
 
 	return render(request, "tweets/tweet_display.html", context)

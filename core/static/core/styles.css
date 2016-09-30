@@ -1,15 +1,12 @@
 body {
 	margin-top: 70px;
+	font-family: Helvetica;
 }
-
 
 .icon-bar {
 	background-color: black;
 }
 
-/*#navbar-header-collapse {
-	background-color: white;
-}*/
 
 .navbar-fixed-top a {
 	color: #66757F;
@@ -24,12 +21,18 @@ body {
 }
 
 .tweet-box {
-	margin: 0;
+	margin: 5px;
+	height: 85px;
+	font-size: 14px;
+}
+
+.tweet-rows {
+	margin: 5px 0px;
 }
 
 .icon-logo {
 	border: 1px solid black;
-	height: 50px;
+	height: 40px;
 	padding: 0;
 }
 
@@ -38,7 +41,9 @@ body {
 }
 
 .user-photo {
-	width: 30px;
+	width: 48px;
+	border-radius: 5px;
+	margin-top: 12px;
 }
 
 .tweet-lg-right {
