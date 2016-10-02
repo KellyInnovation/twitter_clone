@@ -36,6 +36,7 @@ def tweet_list(request):
 
 	return render(request, "tweets/tweet_list.html", context)
 
+@login_required
 def tweet_new(request):
 	profiles = UserProfile()
 
