@@ -48,30 +48,27 @@
                     <li><a href="{% url 'core:index' %}" class="navbar-brand">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+                
+                    <li><a class="navbar-right" href="{% url 'tweets:tweet_new' %} ">
+                        <img class="tweet-icon" src="http://buyfollowersguide.com/wp-content/uploads/2014/10/twitter-tweet-icon.png">
+                    </a></li>
+                    
                     {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'accounts:logout' %}">
+                        <li><a class="navbar-right" href="{% url 'accounts:logout' %}">
                         Logout
                         </a></li>
-                            <li><a class="navbar-brand" href="{% url 'user_profiles:profile_list' %}"> 
+                            <li><a class="navbar-right navbar-brand" href="{% url 'user_profiles:profile_list' %}"> 
                             {{user.username}}
                             {% load static %}
                             <img src="{% static 'core/awesome_profile.png' %}" class="navbar-brand user-photo-nav">
                         </a></li>
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                        <li><a href="{% url 'accounts:register' %}">Sign Up</a></li>
+                        <li><a class="navbar-right" href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a class="navbar-right" href="{% url 'accounts:register' %}">Sign Up</a></li>
                         
-                    {% endif %}
-
-                    
-                    <li><a href="{% url 'tweets:tweet_new' %} ">
-                        <img class="tweet-icon" src="http://buyfollowersguide.com/wp-content/uploads/2014/10/twitter-tweet-icon.png">
-                    </a></li>
+                    {% endif %}                    
                 
-                </ul>
-                
+                </ul>                
                 
             </div>            
         </nav>
