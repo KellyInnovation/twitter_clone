@@ -5,6 +5,8 @@ from .models import Tweet
 from .forms import TweetForm
 from django.contrib.auth.models import User
 from user_profiles.models import UserProfile
+from django.contrib.auth.decorators import login_required
+
 
 def tweet_display(request):
 	tweets = Tweet.objects.all()
